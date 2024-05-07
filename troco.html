@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Edson Batista">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Troco</title>
+</head>
+<body>
+    <h1>Calcular Troco</h1>
+    <button onclick="calcular()">Comprar produto</button>
+    <h3>Clique no botão acima para iniciar.</h3>
+
+    
+    <script>
+
+        function calcular() {
+            let produto = prompt("Que produto  você está comprando?")
+            let preco = parseFloat(prompt(`Quanto custa ${produto} que você está comprando?`))
+            let din = parseFloat(prompt(`Qual foi o valor que você deu para pagar ${produto}?`))
+            
+            alert(
+                `
+                Você comprou ${produto} que custou R$ ${preco} 
+                Deu R$ ${din} em dinheiro e vai receber R$ ${din-preco} de troco.
+                Volte sempre!
+                `)
+        }
+
+    </script>
+</body>
+</html>
