@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Edson Batista">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço Mudou</title>
+</head>
+<body>
+    <h1>Preço Mudou</h1>
+    <button onclick="calcular()">Verificar</button>
+    <br>
+    <br>
+    <h1 id="analizando">Clique no botão acima para verificar mudança de preço.</h1>
+    <p id="resultado"></p>
+    
+    <script>
+
+        function calcular() {
+            let anterior = parseFloat(prompt("Qual era o preço anterior do produto?"))
+            let atual = parseFloat(prompt(`Qual é o preço atual do produto?`))
+            document.getElementById('analizando').innerHTML = `Analisando os valores informados`
+
+            if (atual>anterior) {
+                document.getElementById("resultado").innerHTML = 
+                `
+                <h4>O produto custava R$ ${anterior} e agora custa R$ ${atual}.</h4>
+                <h4>Hoje o produto está mais caro.</h4>
+                <h4>O preço subiu R$ ${(atual-anterior).toFixed(2)} em relaçaõ ao preço anterior.</h4>
+                <h4>Uma variaçaõ de ${((atual-anterior)/anterior*100).toFixed(2)}% para cima.</h4>
+                `
+            } else if(atual<anterior) {
+                document.getElementById("resultado").innerHTML = 
+                `
+                <h4>O produto custava R$ ${anterior} e agora custa R$ ${atual}.</h4>
+                <h4>Hoje o produto está mais barato.</h4>
+                <h4>O preço caiu R$ ${anterior-atual} em relação ao preço anterior.</h4>
+                <h4>Uma variação de ${((anterior-atual)/anterior*100).toFixed(2)}% para baixo.</h4>
+                `
+            }
+            else{
+                document.getElementById("resultado").innerHTML = 
+                `
+                <h4>O produto custava R$ ${anterior} e agora custa R$ ${atual}.</h4>
+                <h4>Hoje o produto está no mesmo valor.</h4>
+                <h4>O preço não teve aumento em relação ao preço anterior.</h4>
+                <h4>Uma variação de ${((anterior-atual)/anterior*100).toFixed(2)}%.</h4>
+                `
+            }
+
+
+
+        }
+
+    </script>
+</body>
+</html>

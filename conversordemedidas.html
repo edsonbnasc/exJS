@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Edson Batista">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Medidas</title>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <button onclick="verificar()">Converter</button>
+    <br>
+    <br>
+    <h1 id="analizando"></h1>
+    <div>
+        <p id="resultado"></p>
+    </div>
+    <script>
+        
+        function verificar() {
+            metro = prompt("Digite uma distancia em metros (m)?")
+            document.getElementById("analizando").innerHTML = "A distância de " + metro + " metros, corresponde a ...."
+            
+                Km = metro/1000;
+                Hm = metro/100;
+                Dam = metro/10;
+                dm = metro/0.1;
+                cm = metro/0.01;
+                mm = metro/0.001;
+                document.getElementById("resultado").innerHTML = 
+                `
+                <p>${Km} quilômetros (Km)</p>
+                <p>${Hm} hectômetros (Hm)</p>
+                <p>${Dam} decâmetros (Dam)</p>
+                <p>${dm} decímetros (dm)</p>
+                <p>${cm} centímetros (Dam)</p>
+                <p>${mm} milímetros (mm)</p>
+                `   
+        }
+        
+            
+
+    </script>
+    <style>
+        div{
+            display: flex;
+            gap: 10px;
+            font-size: 20px;
+        }
+        #analizando{
+            font-size: 35px;
+            font-weight: bold;
+        }
+    </style>
+</body>
+</html>

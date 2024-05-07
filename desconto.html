@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Edson Batista">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular desconto</title>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+    <button onclick="calcular()">Desconto de 10%</button>
+    <h3>Clique no botão acima para iniciar.</h3>
+
+    <h1 id="analizando"></h1>
+    <p id="resultado"></p>
+    
+    <script>
+
+        function calcular() {
+            let produto = prompt("Qual é o produto que você está comprando?")
+            let preco = parseFloat(prompt(`Qual é o preço de  ${produto}?`))
+            document.getElementById('analizando').innerHTML = `Calculando desconto de 10% para ${produto}`
+
+            document.getElementById("resultado").innerHTML = 
+            `
+            <h4>O preço original era R$ ${preco}.</h4>
+            <h4>Você acaba de ganhar R$ ${(preco * 0.1).toFixed(2)} de desconto (-10%).</h4>
+            <h4>No fim, você vai pagar R$ ${(preco * 0.9).toFixed(2)} no produto ${produto}.</h4>
+            `
+
+
+        }
+
+    </script>
+</body>
+</html>

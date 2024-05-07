@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Edson Batista">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste Salarial</title>
+</head>
+<body>
+    <h1>Reajuste Salarial</h1>
+    <button onclick="calcular()">Verificar</button>
+    <br>
+    <br>
+    <h1 id="analizando">Clique no botão acima para iniciar.</h1>
+    <p id="resultado"></p>
+    
+    <script>
+
+        function calcular() {
+            let funcionario = prompt("Qual é o nome do funcionario?")
+            let salario = parseFloat(prompt(`Qual é o salario de ${funcionario}?`))
+            let porc = parseFloat(prompt(`O salario de ${funcionario} vai ser reajustado em qual porcentagem?`))
+            document.getElementById('analizando').innerHTML = `${funcionario} recebeu um aumento `
+
+            
+                document.getElementById("resultado").innerHTML = 
+                `
+                <h4>O salario atual era R$ ${salario.toFixed(2)}.</h4>
+                <h4>Com um aumento de ${porc}%, o salario vai aumentar R$${(salario*porc)/100} no proximo mês .</h4>
+                <h4>E a partir dai ${funcionario} vai passar a ganhar R$ ${(salario+((salario*porc)/100)).toFixed(2)}.</h4>
+                `
+            
+
+
+
+        }
+
+    </script>
+</body>
+</html>

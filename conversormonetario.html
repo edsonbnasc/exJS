@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Edson Batista">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Medidas</title>
+</head>
+<body>
+    <h1>Conversor R$ &rarr; U$$</h1>
+    <button onclick="verificar()">Converter</button>
+    <h4>Clique no botão acima para iniciar.</h4>
+    <br>
+    <br>
+    <h1 id="analizando"></h1>
+    <div>
+        <p id="resultado"></p>
+    </div>
+    <script>
+        dolar = prompt("Antes de mais nada. Quanto está a cotação do dólar agora?")
+        
+        function verificar() {
+            real = prompt("Quantos R$ você tem na carteira?")
+            trocado = (real/dolar).toFixed(2)
+            
+            document.getElementById("analizando").innerHTML = "Convertendo R$ em U$$ aguarde ...."
+            
+              
+            document.getElementById("resultado").innerHTML = `Você vai conseguir trocar R$`+real+` por U$$ ` + trocado +  ` dolares....`
+              
+        }
+        
+            
+
+    </script>
+    <style>
+        div{
+            display: flex;
+            gap: 10px;
+            font-size: 20px;
+        }
+        #analizando{
+            font-size: 35px;
+            font-weight: bold;
+        }
+    </style>
+</body>
+</html>

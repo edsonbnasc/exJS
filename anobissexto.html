@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Edson Batista">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Ano Bissexto</title>
+</head>
+<body>
+    <h1>Ano Bissexto</h1>
+    <button onclick="verificar()">VERIFICAR</button>
+    <br>
+    <br>
+    <h1 id="analizando"></h1>
+    <div>
+        <span id="resultado">Informe um ano para saber se ele é bissexto</span><span id="bissexto" class="bissexto"></span>
+        <i id="bi-check-square-fill" class="bi bi-check-square-fill"></i>
+        <i id="bi-x-square-fill" class="bi bi-x-square-fill"></i>
+    </div>
+    <script>
+        
+        function verificar() {
+            ano = parseInt(prompt("Qual é o ano que você quer verificar?"))
+            document.getElementById("analizando").innerHTML = "Analisando o ano de " + ano + " ...."
+            if (ano % 4 == 0) {
+                document.getElementById("resultado").innerHTML = "O ano de " + ano
+                yes();
+                document.getElementById("bissexto").innerHTML = " É BISSEXTO! "
+            }
+            else{
+                document.getElementById("resultado").innerHTML = "O ano de " + ano
+                not();
+                document.getElementById("bissexto").innerHTML = " NÃO É BISSEXTO" 
+            }
+        }
+        
+        function yes() {
+            document.getElementById('bissexto').classList.remove('active')
+            document.getElementById('bi-check-square-fill').classList.add('active')
+            document.getElementById('bi-x-square-fill').classList.remove('active')   
+        }
+        function not() {
+            document.getElementById('bissexto').classList.add('active')
+            document.getElementById('bi-check-square-fill').classList.remove('active') 
+            document.getElementById('bi-x-square-fill').classList.add('active') 
+            
+}
+    </script>
+    <style>
+        div{
+            display: flex;
+            gap: 10px;
+            font-size: 20px;
+        }
+        #analizando{
+            font-size: 35px;
+        }
+        .bi-check-square-fill{
+            display: none;
+        }
+        .bi{
+            font-size: 20px;   
+        }
+        .bi-check-square-fill.active{
+            display: block;
+            color: green;
+        }
+        .bi-x-square-fill{
+            display: none;
+        }
+        .bi-x-square-fill.active{
+            display: block;
+            color: red;
+        }
+        .bissexto{
+            background-color: lightgreen; 
+        }
+        .bissexto.active{
+            background-color: lightcoral;
+        }
+    </style>
+</body>
+</html>
